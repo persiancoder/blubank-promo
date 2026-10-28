@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دریافت هدیه بلوبانک</title>
+    <style>
+        body { font-family: Tahoma, Arial, sans-serif; text-align: center; background-color: #f4f6f8; margin: 0; padding: 20px; }
+        .container { background: #fff; max-width: 400px; margin: 50px auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; font-size: 16px; line-height: 1.6; }
+        .code-box { background: #e3f2fd; color: #1976d2; font-size: 26px; font-weight: bold; padding: 15px; border-radius: 8px; margin: 20px 0; letter-spacing: 2px; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; text-decoration: none; font-weight: bold; box-sizing: border-box; }
+        .btn-copy { background: #1976d2; color: #fff; }
+        .btn-download { background: #4caf50; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>۱. اپلیکیشن بلو را دانلود کنید<br>۲. کد زیر را در بخش معرف وارد کنید</h2>
+        <div class="code-box" id="promoCode">MNTUDQ</div>
+        <button class="btn btn-copy" onclick="copyCode()">کپی کردن کد</button>
+        <a href="https://blubank.sb24.ir/download" class="btn btn-download">دانلود اپلیکیشن بلوبانک</a>
+    </div>
+    <script>
+        function copyCode() {
+            navigator.clipboard.writeText(document.getElementById("promoCode").innerText);
+            alert("کد با موفقیت کپی شد!");
+        }
+    </script>
+</body>
+</html>
