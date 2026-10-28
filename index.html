@@ -5,26 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دریافت هدیه بلوبانک</title>
     <style>
-        body { font-family: Tahoma, Arial, sans-serif; text-align: center; background-color: #f4f6f8; margin: 0; padding: 20px; }
-        .container { background: #fff; max-width: 400px; margin: 50px auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #333; font-size: 16px; line-height: 1.6; }
-        .code-box { background: #e3f2fd; color: #1976d2; font-size: 26px; font-weight: bold; padding: 15px; border-radius: 8px; margin: 20px 0; letter-spacing: 2px; }
-        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; text-decoration: none; font-weight: bold; box-sizing: border-box; }
-        .btn-copy { background: #1976d2; color: #fff; }
-        .btn-download { background: #4caf50; color: #fff; }
+        body { font-family: Tahoma, Arial, sans-serif; text-align: center; background-color: #f0f4f8; margin: 0; padding: 20px; }
+        .container { background: #fff; max-width: 400px; margin: 50px auto; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 6px solid #2979ff; }
+        .brand-name { color: #2979ff; font-weight: bold; font-size: 28px; margin-bottom: 15px; display: block; letter-spacing: -1px; }
+        h2 { color: #444; font-size: 15px; line-height: 1.8; margin-bottom: 25px; }
+        .code-box { background: #eef5ff; color: #2979ff; font-size: 28px; font-weight: bold; padding: 15px; border-radius: 8px; margin: 20px 0; letter-spacing: 4px; border: 2px dashed #2979ff; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 12px 0; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; text-decoration: none; font-weight: bold; box-sizing: border-box; transition: 0.3s; }
+        .btn-copy { background: #2979ff; color: #fff; }
+        .btn-copy:hover { background: #1c54b2; }
+        .btn-download { background: #00c853; color: #fff; }
+        .btn-download:hover { background: #009624; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>۱. اپلیکیشن بلو را دانلود کنید<br>۲. کد زیر را در بخش معرف وارد کنید</h2>
+        <span class="brand-name">blubank</span>
+        <h2>۱. اپلیکیشن بلوبانک را دانلود کنید<br>۲. در بخش معرف، کد زیر را وارد کنید</h2>
+        
         <div class="code-box" id="promoCode">MNTUDQ</div>
-        <button class="btn btn-copy" onclick="copyCode()">کپی کردن کد</button>
+        
+        <button class="btn btn-copy" onclick="copyCode()">کپی کردن کد معرف</button>
         <a href="https://blubank.sb24.ir/download" class="btn btn-download">دانلود اپلیکیشن بلوبانک</a>
     </div>
+
     <script>
         function copyCode() {
             navigator.clipboard.writeText(document.getElementById("promoCode").innerText);
-            alert("کد با موفقیت کپی شد!");
+            
+            // تغییر موقت متن دکمه برای اطمینان کاربر
+            const btn = document.querySelector('.btn-copy');
+            const originalText = btn.innerText;
+            btn.innerText = "کد با موفقیت کپی شد ✓";
+            btn.style.background = "#00c853";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "#2979ff";
+            }, 2500);
         }
     </script>
 </body>
